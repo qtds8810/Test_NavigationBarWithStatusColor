@@ -11,6 +11,18 @@ import UIKit
 private let cellIdentifier = "cellIdentifier"
 
 class ViewController: UIViewController {
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        scrollViewDidScroll(myTableView)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.navigationBar.resetNavBar()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +36,8 @@ class ViewController: UIViewController {
         navigationItem.title = "导航栏滑动渐变demo"
         navigationController?.navigationBar.customMyBackgroundColor(UIColor.brownColor())
         navigationController?.navigationBar.customMyBackgroundColorAlpha(0)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "详情", style: UIBarButtonItemStyle.Plain, target: self, action: "rightItemClick")
     }
     
     private func setupUI() {
@@ -31,9 +45,15 @@ class ViewController: UIViewController {
         
         view.addSubview(myTableView)
     }
+    
+    func rightItemClick() {
+        let detali = DetailViewController()
+        
+        navigationController?.pushViewController(detali, animated: true)
+    }
 
     private lazy var myTableView: UITableView = {
-        let tv = UITableView(frame: CGRect(x: 0, y: 64, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height), style: UITableViewStyle.Plain)
+        let tv = UITableView(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: UIScreen.mainScreen().bounds.height), style: UITableViewStyle.Plain)
         tv.dataSource = self
         tv.delegate = self
         tv.registerClass(UITableViewCell.self , forCellReuseIdentifier: cellIdentifier)
@@ -54,14 +74,20 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
         
         cell.textLabel?.text = titlesArr[indexPath.row] + "    \(indexPath.row % 2 == 0 ? "奇数" : "偶数")"
+        cell.backgroundColor = UIColor.yellowColor()
         
         return cell
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        let delta: CGFloat = scrollView.contentOffset.y
-        let alpha = CGFloat(( -64 + delta) / (view.frame.height))
-        navigationController?.navigationBar.customMyBackgroundColorAlpha(alpha)
+        let color = UIColor(red: 0 / 255.0, green: 175 / 255.0, blue: 240 / 255.0, alpha: 1)
+        let offsetY: CGFloat = scrollView.contentOffset.y
+        if offsetY > 50 {
+            let alpha = min(1, 1 - ((50 + 64 - offsetY) / 64))
+            navigationController?.navigationBar.customMyBackgroundColor(color.colorWithAlphaComponent(alpha))
+        } else {
+            navigationController?.navigationBar.customMyBackgroundColor(color.colorWithAlphaComponent(0))
+        }
     }
 }
 

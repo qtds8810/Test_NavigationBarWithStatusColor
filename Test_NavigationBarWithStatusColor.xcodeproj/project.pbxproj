@@ -12,7 +12,8 @@
 		6640CEA71C97D69A0095385A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6640CEA51C97D69A0095385A /* Main.storyboard */; };
 		6640CEA91C97D69A0095385A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6640CEA81C97D69A0095385A /* Assets.xcassets */; };
 		6640CEAC1C97D69A0095385A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6640CEAA1C97D69A0095385A /* LaunchScreen.storyboard */; };
-		6640CEB41C97D6C00095385A /* UINavigationBar+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6640CEB31C97D6C00095385A /* UINavigationBar+Category.swift */; };
+		6640CEB61C97ECCF0095385A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6640CEB51C97ECCF0095385A /* DetailViewController.swift */; };
+		6640CEB81C97ED800095385A /* UINavigationBar+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6640CEB71C97ED800095385A /* UINavigationBar+Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +24,8 @@
 		6640CEA81C97D69A0095385A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6640CEAB1C97D69A0095385A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6640CEAD1C97D69A0095385A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6640CEB31C97D6C00095385A /* UINavigationBar+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Category.swift"; sourceTree = "<group>"; };
+		6640CEB51C97ECCF0095385A /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		6640CEB71C97ED800095385A /* UINavigationBar+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationBar+Category.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				6640CEA11C97D69A0095385A /* AppDelegate.swift */,
 				6640CEA31C97D69A0095385A /* ViewController.swift */,
-				6640CEB31C97D6C00095385A /* UINavigationBar+Category.swift */,
+				6640CEB51C97ECCF0095385A /* DetailViewController.swift */,
+				6640CEB71C97ED800095385A /* UINavigationBar+Category.swift */,
 				6640CEA51C97D69A0095385A /* Main.storyboard */,
 				6640CEA81C97D69A0095385A /* Assets.xcassets */,
 				6640CEAA1C97D69A0095385A /* LaunchScreen.storyboard */,
@@ -138,9 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6640CEB41C97D6C00095385A /* UINavigationBar+Category.swift in Sources */,
 				6640CEA41C97D69A0095385A /* ViewController.swift in Sources */,
+				6640CEB81C97ED800095385A /* UINavigationBar+Category.swift in Sources */,
 				6640CEA21C97D69A0095385A /* AppDelegate.swift in Sources */,
+				6640CEB61C97ECCF0095385A /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +292,7 @@
 				6640CEB21C97D69A0095385A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

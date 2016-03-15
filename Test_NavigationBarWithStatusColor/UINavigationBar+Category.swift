@@ -54,4 +54,13 @@ extension UINavigationBar {
         }
         coverView.backgroundColor = coverView.backgroundColor?.colorWithAlphaComponent(alpha)
     }
+    
+    /**
+     解决push进入下一页的bug
+     */
+    func resetNavBar() {
+        setBackgroundImage(nil , forBarMetrics: UIBarMetrics.Default)
+        coverView?.removeFromSuperview()
+        coverView = nil
+    }
 }
