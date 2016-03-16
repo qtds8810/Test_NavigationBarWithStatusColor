@@ -61,19 +61,17 @@ class ViewController: UIViewController {
         return tv
     }()
     
-    private lazy var titlesArr: [String] = ["测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试","测试"]
-
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titlesArr.count
+        return 100
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
         
-        cell.textLabel?.text = titlesArr[indexPath.row] + "    \(indexPath.row % 2 == 0 ? "奇数" : "偶数")"
+        cell.textLabel?.text = String(format: "%i", indexPath.row + 1)
         cell.backgroundColor = UIColor.yellowColor()
         
         return cell
